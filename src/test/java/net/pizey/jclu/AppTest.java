@@ -1,5 +1,6 @@
 package net.pizey.jclu;
 
+import net.pizey.test.rdd.Requirements;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -31,6 +32,7 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
+    @Requirements(ids={"01", "02"})
     public void testApp()
     {
         assertTrue( true );
