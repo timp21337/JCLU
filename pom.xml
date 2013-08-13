@@ -33,11 +33,6 @@ A simple command line utility that converts lengths in different units.
       </roles>
     </developer>
   </developers>
-  <scm>
-    <connection>scm:cvs:pserver:anonymous@paneris.net:/usr/cvsroot:Bibliomania</connection>
-    <developerConnection>scm:cvs:pserver:anon@paneris.net:/usr/cvsroot:Bibliomania</developerConnection>
-    <url>http://paneris.net/cgi-bin/cvsweb.cgi/Bibliomania/</url>
-  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -80,8 +75,8 @@ A simple command line utility that converts lengths in different units.
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <target>1.4</target>
-          <source>1.4</source>
+          <target>1.6</target>
+          <source>1.6</source>
         </configuration>
       </plugin>
       <plugin>
@@ -148,7 +143,6 @@ A simple command line utility that converts lengths in different units.
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.1</version>
         <configuration>
           <outputEncoding>UTF-8</outputEncoding>
           <reportPlugins>
