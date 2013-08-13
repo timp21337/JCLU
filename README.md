@@ -1,4 +1,2 @@
-JCLU
-====
-
-Java Convert Length Units
+JCLU - Java Convert Length Units
+================================
