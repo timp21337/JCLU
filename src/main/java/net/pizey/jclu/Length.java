@@ -41,49 +41,15 @@ public class Length {
   }
   @Override
   public String toString() { 
-    return prettyDouble(real) + " " + lengthUnit.getSymbol(); 
-  }
-  
-  /** Mint a Length using for example "9 in". */
-  public Length fromString(String stringLength){
-    String[] bits = stringLength.trim().split(" ");
-    if (bits.length != 2)
-      throw new IllegalArgumentException("Cannot parse " + stringLength);
-    return new Length(new Double(bits[0]), bits[1]);      
+    return prettyDouble(real) + " " + getLengthUnitSymbol(); 
   }
   
   /** Convert Length of given unit. */
   public Length toUnit(String symbol){
     // autoboxed
     return new Length(
-        (real * lengthUnit.getMetres()) / LengthUnit.fromSymbol(symbol).getMetres(), 
+        (getReal() * getLengthUnit().getMetres()) / LengthUnit.fromSymbol(symbol).getMetres(), 
         symbol);
   }
   
-  @Override
-  public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result
-        + lengthUnit.hashCode();
-    result = prime * result + real.hashCode();
-    return result;
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    Length other = (Length) obj;
-    if (!lengthUnit.equals(other.lengthUnit))
-      return false;
-    if (!real.equals(other.real))
-      return false;
-    return true;
-  }
-
 }
