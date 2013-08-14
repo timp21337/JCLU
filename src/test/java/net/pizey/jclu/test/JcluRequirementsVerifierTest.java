@@ -11,7 +11,7 @@ import net.pizey.test.rdd.RequirementsVerifier;
  * @author timp
  * @since 2013-08-13
  */
-public class JcluRequirementsVerifier extends RequirementsVerifier {
+public class JcluRequirementsVerifierTest extends RequirementsVerifier {
 
   public void addRequirements() {
     addRequirement("01", "Conversions must be reflexive.");
