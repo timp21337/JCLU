@@ -18,6 +18,8 @@ public class LengthUnitConverterTest extends TestCase {
     } catch (IllegalArgumentException e){ 
       e = null;
     }
+    // Should complete
+    LengthUnitConverter.main(new String[] {"10", "cm", "in", "m"});
   }
 
   @Requirements({"02"})
