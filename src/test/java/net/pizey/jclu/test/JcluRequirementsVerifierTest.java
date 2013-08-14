@@ -21,11 +21,7 @@ public class JcluRequirementsVerifierTest extends RequirementsVerifier {
     addRequirement("06", "All length units must be convertible to each other.");
     addRequirement("07", "Decimals to be rounded to three decimal places.");
     addRequirement("08", "Rounding errors must not fail comparisons.");
-    //addRequirement("07", "There must be a mechanism to add new units.");
-    //addRequirement("08", "An object must be creatable from a string representation.");
-    //addRequirement("10", "Lengths must have an additional unabbreviated textual description.");
-    //addRequirement("11", "Lengths larger or smaller than can be represented must give an error");
-
+    addRequirement("09", "All code must be exercised by tests.");
   }
   
   @Override
