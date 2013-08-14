@@ -126,7 +126,7 @@ A simple command line utility that converts lengths in different units.
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>net.pizey.LengthUnitConverter</mainClass>
+              <mainClass>net.pizey.jclu.LengthUnitConverter</mainClass>
             </manifest>
           </archive>
         </configuration>
