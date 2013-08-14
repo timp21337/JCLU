@@ -7,6 +7,9 @@ import java.lang.annotation.ElementType;
 
 /**
  * Enable the cross referencing of tests to requirements.
+ * 
+ * @author timp
+ * @since 2013-08-13
  */
 @Target({ElementType.METHOD}) 
 @Retention(RetentionPolicy.RUNTIME) 
