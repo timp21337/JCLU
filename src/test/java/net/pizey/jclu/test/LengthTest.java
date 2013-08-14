@@ -23,4 +23,14 @@ public class LengthTest extends TestCase {
                 new Length(1.1, "yd").toUnit("m").toUnit("yd"));
   }
 
+
+  @Requirements({"05"})
+  /** If x = y and y = z then x = z */
+  public void testTransitive(){
+    assertEquals(new Length(1.1, "yd").toUnit("m").toUnit("in"),
+                 new Length(39.6, "in"));
+    assertEquals(new Length(39.6, "in").toUnit("m").toUnit("yd"),
+                 new Length(1.1, "yd"));
+  }
+
 }
