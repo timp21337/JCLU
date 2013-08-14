@@ -62,11 +62,13 @@ public class Length {
   }
   
   @Override
+  /** Note we are not relying upon the changeable 
+   * hashCode of LengthUnit. */
   public int hashCode() {
     final int prime = 31;
     int result = 1;
     result = prime * result
-        + lengthUnit.hashCode();
+        + lengthUnit.getMetres().hashCode();
     result = prime * result + real.hashCode();
     return result;
   }

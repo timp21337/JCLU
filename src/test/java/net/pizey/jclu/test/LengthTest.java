@@ -66,4 +66,21 @@ public class LengthTest extends TestCase {
   public void testRounding(){
     assertEquals(new Length(36, "in").toUnit("yd").toString(), new Length(1, "yd").toString());
   }
+  
+  @Requirements({"09"})
+  public void testEquals(){
+    Length it = new Length(1, "in");
+    assertEquals(it,it);
+    assertFalse(new Length(1, "in").equals(null));
+    assertFalse(new Length(1, "in").equals(new Double(1))); 
+    assertFalse(new Length(1, "in").equals(new Length(11, "in"))); 
+    assertFalse(new Length(1, "in").equals(new Length(1, "cm"))); 
+    assertEquals(new Length(1, "in"), new Length(1, "in")); 
+  }
+  
+  @Requirements({"09"})
+  public void testHashcode(){
+    assertEquals(830702529, new Length(33.4, "m").hashCode());
+  }
+  
 }
