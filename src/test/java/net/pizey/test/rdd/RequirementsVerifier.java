@@ -7,11 +7,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public abstract class RequirementsVerifier {
 
-  static HashMap<String, String> requirements = new HashMap<String, String>();
-  static HashMap<String, ArrayList<String>> requirementTests = new HashMap<String, ArrayList<String>>();
+  static SortedMap<String, String> requirements = new TreeMap<String, String>();
+  static SortedMap<String, ArrayList<String>> requirementTests = new TreeMap<String, ArrayList<String>>();
   
   static void readAnnotation(Class<?> test) {
     System.out.println("Annotation element for " + test.getSimpleName());
@@ -22,7 +24,7 @@ public abstract class RequirementsVerifier {
         Annotation singleAnnotation = method.getAnnotation(Requirements.class);
         Requirements requirementRefs = (Requirements) singleAnnotation;
 
-        for (String id : requirementRefs.ids()){
+        for (String id : requirementRefs.value()){
           System.out.println(" " + id + ", " + requirements.get(id));
           requirementTests.get(id).add(test.getSimpleName() + "." + method.getName());
         }
@@ -44,9 +46,13 @@ public abstract class RequirementsVerifier {
     for (String ref : requirements.keySet()){
       System.out.println("<h3>" + ref + " " + requirements.get(ref) + "</h3>");
       System.out.println("<ul>");
+      boolean hadOne = false;
       for (String test : requirementTests.get(ref)){
         System.out.println(" <li>" + test + "</li>");
+        hadOne = true;
       }
+      if (!hadOne)
+        System.out.println(" <li><font color='red'>None</font></li>");
       System.out.println("</ul>");
     }
     
