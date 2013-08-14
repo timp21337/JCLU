@@ -34,11 +34,6 @@ public class Length {
   public void setLengthUnit(LengthUnit lengthUnit) {
     this.lengthUnit = lengthUnit;
   }
-
-  /** Print with full unit name. */
-  public String pprint() { 
-    return real.toString() + " " + lengthUnit.getName(); 
-  }
   
   private static String prettyDouble(Double d){
     String out = d.toString();
