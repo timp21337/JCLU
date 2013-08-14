@@ -13,18 +13,18 @@ import java.util.TreeMap;
 import junit.framework.TestCase;
 
 /**
- * Enable the cross referencing of tests to requirements.
+ * Check hat annotated junit test classes meet requirements.
  * 
  * @author timp
  * @since 2013-08-13
  */
 public abstract class RequirementsVerifier extends TestCase {
 
-  static SortedMap<String, String> requirements = new TreeMap<String, String>();
-  static SortedMap<String, ArrayList<String>> requirementTests = new TreeMap<String, ArrayList<String>>();
-  static ArrayList<Class<?>> tests = new ArrayList<Class<?>>();
+  protected static SortedMap<String, String> requirements = new TreeMap<String, String>();
+  protected static SortedMap<String, ArrayList<String>> requirementTests = new TreeMap<String, ArrayList<String>>();
+  protected static ArrayList<Class<?>> tests = new ArrayList<Class<?>>();
   
-  static void addRequirement(String ref, String title) {
+  protected static void addRequirement(String ref, String title) {
     requirements.put(ref, title);
     requirementTests.put(ref, new ArrayList<String>());
   }

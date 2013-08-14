@@ -1,10 +1,11 @@
-package net.pizey.test.rdd;
+package net.pizey.jclu.test;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 import net.pizey.jclu.AppTest;
+import net.pizey.test.rdd.RequirementsVerifier;
 
 /**
  * @author timp
