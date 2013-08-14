@@ -32,9 +32,8 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
-    @Requirements(ids={"01", "02"})
-    public void testApp()
-    {
+    @Requirements({"01", "02"})
+    public void testApp(){
         assertTrue( true );
     }
 }
