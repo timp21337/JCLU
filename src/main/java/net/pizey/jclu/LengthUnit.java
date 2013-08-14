@@ -12,9 +12,9 @@ import java.util.Map;
 public enum LengthUnit  {
 
   IN ("in", 0.0254),
-  FT ("ft", 0.9144),
+  FT ("ft", 0.3048),
   YD ("yd", 0.9144),
-  M  ("m", 1.0),
+  M  ("m",  1.0),
   CM ("cm", 0.01);
   
   private static Map<String, LengthUnit> units = new HashMap<String, LengthUnit>();
