@@ -11,5 +11,5 @@ import java.lang.annotation.ElementType;
 @Target({ElementType.METHOD}) 
 @Retention(RetentionPolicy.RUNTIME) 
 public @interface Requirements {
-  String[] ids() default "";  
+  String[] value() default "";  
 }
