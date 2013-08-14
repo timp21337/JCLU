@@ -1,5 +1,7 @@
 package net.pizey.jclu;
 
+import java.math.BigDecimal;
+
 /** 
  * A tuple of a real and a unit to represent a length. 
  * @author timp
@@ -11,7 +13,7 @@ public class Length {
   private LengthUnit lengthUnit;
 
   public Length(double real, String unitSymbol) {
-    this.setReal(real);
+    this.setReal(new Double(real));
     this.setLengthUnit(LengthUnit.fromSymbol(unitSymbol));
   }
 
@@ -35,10 +37,17 @@ public class Length {
     this.lengthUnit = lengthUnit;
   }
   
-  private static String prettyDouble(Double d){
-    String out = d.toString();
-    return out.replaceFirst("\\.0", "");
+  public static Double round(double value) {
+    BigDecimal bd = new BigDecimal(value);
+    bd = bd.setScale(3, BigDecimal.ROUND_HALF_UP);
+    return bd.doubleValue();
   }
+
+  private static String prettyDouble(Double d){
+    String out = round(d).toString();
+    return out.replaceFirst("\\.0$", "");
+  }
+  
   @Override
   public String toString() { 
     return prettyDouble(getReal()) + " " + getLengthUnitSymbol(); 
