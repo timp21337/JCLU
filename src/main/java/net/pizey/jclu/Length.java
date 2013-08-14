@@ -23,7 +23,7 @@ public class Length {
     this.real = new Double(real);
   }
 
-  public String getUnitSymbol() {
+  public String getLengthUnitSymbol() {
     return lengthUnit.getSymbol();
   }
 
@@ -41,7 +41,7 @@ public class Length {
   }
   @Override
   public String toString() { 
-    return prettyDouble(real) + " " + getLengthUnitSymbol(); 
+    return prettyDouble(getReal()) + " " + getLengthUnitSymbol(); 
   }
   
   /** Convert Length of given unit. */
