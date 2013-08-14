@@ -15,7 +15,7 @@ public class JcluRequirementsVerifierTest extends RequirementsVerifier {
   public void addRequirements() {
     addRequirement("01", "Anticipated exceptions must be tested.");
     addRequirement("02", "Integers must not be printed with trailing decimal.");
-    //addRequirement("01", "Conversions must be reflexive.");
+    addRequirement("03", "Conversions must be reflexive.");
     //addRequirement("02", "Conversions must be symetric.");
     
     //addRequirement("03", "Conversions must be transitive.");
@@ -33,6 +33,7 @@ public class JcluRequirementsVerifierTest extends RequirementsVerifier {
   @Override
   public void addTestClasses() {
     tests.add(LengthUnitConverterTest.class);    
+    tests.add(LengthTest.class);    
   }
 
   public void testAllRequirements() throws Exception { 

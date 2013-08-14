@@ -10,7 +10,7 @@ public class Length {
   private Double real;
   private LengthUnit lengthUnit;
 
-  public Length(Double real, String unitSymbol) {
+  public Length(double real, String unitSymbol) {
     this.setReal(real);
     this.setLengthUnit(LengthUnit.fromSymbol(unitSymbol));
   }
@@ -52,4 +52,30 @@ public class Length {
         symbol);
   }
   
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result
+        + lengthUnit.hashCode();
+    result = prime * result + real.hashCode();
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Length other = (Length) obj;
+    if (!lengthUnit.equals(other.lengthUnit))
+      return false;
+    if (!real.equals(other.real))
+      return false;
+    return true;
+  }
+
 }
