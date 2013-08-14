@@ -33,4 +33,37 @@ public class LengthTest extends TestCase {
                  new Length(1.1, "yd"));
   }
 
+  @Requirements({"06", "07"})
+  public void testConvertBetweenAllUnits(){
+    assertEquals("39.6 in", new Length(1.1, "yd").toUnit("in").toString());
+    assertEquals("3.3 ft",  new Length(1.1, "yd").toUnit("ft").toString());
+    assertEquals("1.006 m", new Length(1.1, "yd").toUnit("m").toString());
+    assertEquals("100.584 cm", new Length(1.1, "yd").toUnit("cm").toString());
+
+    assertEquals("0.367 yd", new Length(1.1, "ft").toUnit("yd").toString());
+    assertEquals("13.2 in", new Length(1.1, "ft").toUnit("in").toString());
+    assertEquals("0.335 m", new Length(1.1, "ft").toUnit("m").toString());
+    assertEquals("33.528 cm", new Length(1.1, "ft").toUnit("cm").toString());
+
+    assertEquals("3.056 yd", new Length(110, "in").toUnit("yd").toString());
+    assertEquals("9.167 ft", new Length(110, "in").toUnit("ft").toString());
+    assertEquals("2.794 m", new Length(110, "in").toUnit("m").toString());
+    assertEquals("279.4 cm", new Length(110, "in").toUnit("cm").toString());
+
+    assertEquals("1.203 yd", new Length(1.1, "m").toUnit("yd").toString());
+    assertEquals("3.609 ft", new Length(1.1, "m").toUnit("ft").toString());
+    assertEquals("43.307 in", new Length(1.1, "m").toUnit("in").toString());
+    assertEquals("110 cm", new Length(1.1, "m").toUnit("cm").toString());
+
+    assertEquals("0.012 yd", new Length(1.1, "cm").toUnit("yd").toString());
+    assertEquals("0.036 ft", new Length(1.1, "cm").toUnit("ft").toString());
+    assertEquals("0.433 in", new Length(1.1, "cm").toUnit("in").toString());
+    assertEquals("0.011 m", new Length(1.1, "cm").toUnit("m").toString());
+
+  }
+  
+  @Requirements({"08"})
+  public void testRounding(){
+    assertEquals(new Length(36, "in").toUnit("yd").toString(), new Length(1, "yd").toString());
+  }
 }
