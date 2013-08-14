@@ -16,7 +16,7 @@ public class JcluRequirementsVerifierTest extends RequirementsVerifier {
     addRequirement("01", "Anticipated exceptions must be tested.");
     addRequirement("02", "Integers must not be printed with trailing decimal.");
     addRequirement("03", "Conversions must be reflexive.");
-    //addRequirement("02", "Conversions must be symetric.");
+    addRequirement("04", "Conversions must be symetric.");
     
     //addRequirement("03", "Conversions must be transitive.");
     //addRequirement("04", "Expressions may only be composed of units " + 
