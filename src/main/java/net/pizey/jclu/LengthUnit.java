@@ -38,10 +38,6 @@ public enum LengthUnit  {
     return units.get(symbol);
   }
 
-  public void addUnit(LengthUnit lengthUnit){
-    units.put(lengthUnit.getSymbol(), lengthUnit);
-  }
-  
   public String getSymbol() {
     return symbol;
   }
