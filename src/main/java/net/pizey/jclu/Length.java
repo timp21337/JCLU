@@ -13,16 +13,12 @@ public class Length {
   private LengthUnit lengthUnit;
 
   public Length(double real, String unitSymbol) {
-    this.setReal(new Double(real));
-    this.setLengthUnit(LengthUnit.fromSymbol(unitSymbol));
+    this.real = new Double(real);
+    this.lengthUnit = (LengthUnit.fromSymbol(unitSymbol));
   }
 
   public Double getReal() {
     return real;
-  }
-
-  public void setReal(double real) {
-    this.real = new Double(real);
   }
 
   public String getLengthUnitSymbol() {
@@ -33,10 +29,6 @@ public class Length {
     return lengthUnit;
   }
 
-  public void setLengthUnit(LengthUnit lengthUnit) {
-    this.lengthUnit = lengthUnit;
-  }
-  
   public static Double round(double value) {
     BigDecimal bd = new BigDecimal(value);
     bd = bd.setScale(3, BigDecimal.ROUND_HALF_UP);
