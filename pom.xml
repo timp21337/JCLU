@@ -13,6 +13,11 @@
   <description>
 A simple command line utility that converts lengths in different units.
   </description>
+  <scm>
+    <connection>scm:https://github.com/timp21337/JCLU.git</connection>
+    <developerConnection>scm:git@github.com:timp21337/JCLU.git</developerConnection>
+    <url>https://github.com/timp21337/JCLU</url>
+  </scm>
   <issueManagement>
     <url>
     https://github.com/timp21337/JCLU/issues
@@ -54,7 +59,7 @@ A simple command line utility that converts lengths in different units.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.1</version>
+          <version>3.5.1</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.wagon</groupId>
@@ -66,7 +71,7 @@ A simple command line utility that converts lengths in different units.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>2.2</version>
+          <version>2.9</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -237,6 +242,24 @@ A simple command line utility that converts lengths in different units.
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+        <version>0.12</version>
+        <configuration>
+          <message>Building site for ${project.version}</message>
+          <server>github-timp21337</server>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>site</goal>
+            </goals>
+            <phase>site</phase>
+          </execution>
+        </executions>
+      </plugin>
+
     </plugins>
   </build>
   <reporting>
