@@ -1,0 +1,17 @@
+
+body {
+    font-family: Arial;
+    font-size: 16px;
+    color:#333
+    padding: 50px;
+    margin-left: 50px;
+}
+
+h1 {
+    height: 55px;
+    background: #FF9E1F;
+    border-radius: 10px;
+    border: 1px solid #eb8a0b;
+    padding: 25px;
+}
+
